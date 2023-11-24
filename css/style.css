@@ -1,0 +1,28 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+ul, ol, menu {
+    list-style: none;
+    color: currentColor;
+}
+
+a {
+    color: currentColor;
+    text-decoration: none;
+}
+
+.title {
+    text-align: center;
+    text-transform: uppercase;
+    color: white;
+    background-color: black;
+    padding: 30px;
+}
