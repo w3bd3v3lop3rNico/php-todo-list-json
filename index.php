@@ -13,6 +13,12 @@ $title = 'To Do List';
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </head>
 <body>
+
+    <!-- <form action="./server.php" method="POST">
+        <input type="text" name="prova">
+        <button type="submit">Invia</button>
+    </form> -->
+
     <div id="app">
         <header>
             <div class="container title">
@@ -21,9 +27,13 @@ $title = 'To Do List';
         </header>
         <main>
             <div class="container">
-            <input type="text" v-model="newTodo">
+            <input type="text" placeholder="inserisci una 'todo'" 
+            v-model="newTodo" @keyup.enter="">
                 <ul>
-                    <li></li>
+                    <li v-for="(todo, idx) in todos" :key="idx"
+                    :class=""> 
+                        {{ todo.text }}
+                    </li>
                 </ul>
             </div>
         </main>

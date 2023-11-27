@@ -26,3 +26,7 @@ a {
     background-color: black;
     padding: 30px;
 }
+
+.completed {
+    text-decoration: line-through;
+}
