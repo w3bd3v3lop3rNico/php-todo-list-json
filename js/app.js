@@ -32,6 +32,7 @@ createApp({
             },
         }).then((res)=> {
             console.log(res.data);
+            this.todos = res.data.results;
         })
 
 

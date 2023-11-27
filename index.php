@@ -29,10 +29,12 @@ $title = 'To Do List';
             <div class="container">
             <input type="text" placeholder="inserisci una 'todo'" 
             v-model="newTodo" @keyup.enter="addTodo">
-                <ul>
-                    <li v-for="(todo, idx) in todos" :key="idx">
+                <ul class="todos">
+                    <li class="todo-item" :class="{ completed: todo.done }"
+                    v-for="(todo, idx) in todos" :key="idx">
                     <!-- :class="todo.done : 'completed' "  -->
-                        {{ todo.text }}
+                        <span >{{ todo.text }}</span>
+                        <span>elimina</span>
                     </li>
                 </ul>
             </div>
