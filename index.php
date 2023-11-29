@@ -33,8 +33,8 @@ $title = 'To Do List';
                     <li class="todo-item" :class="{ completed: todo.done }"
                     v-for="(todo, idx) in todos" :key="idx">
                     <!-- :class="todo.done : 'completed' "  -->
-                        <span >{{ todo.text }}</span>
-                        <span>elimina</span>
+                        <span @click="doneTodo(idx)">{{ todo.text }}</span>
+                        <span @click="deleteTodo(idx)">elimina</span>
                     </li>
                 </ul>
             </div>

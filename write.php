@@ -28,7 +28,10 @@ if ($new_todo) {
     // nell'array associativo aggiungo una key 'todos' alla quale assegno l'array preso dal formato json, nel quale ho pushato il nuovo elemento
     $response = [
         'success' => true,
-        'results' => $todos_converted_for_php
+        'results' => $todos_converted_for_php,
+        'postdata' => $_POST,
+        'newtodo' => $new_todo, // var_dump($new_todo);
+        'todos_converted_for_php' => $todos_converted_for_php
     ];
 
     // ricodifico il tutto in formato json
@@ -44,8 +47,13 @@ if ($new_todo) {
     // ALTRIMENTI modifico l'array response, assegnando alla chiave 'success' il valore booleano false e crando la key 'message' assegnandole una stringa contenente un messaggio di errore a mia scelta
     $response = [
         'success' => false,
-        'message' => 'Todo params is required'
+        'message' => 'Todo params is required',
+        'postdata' => $_POST,
+        'getdata' => $_GET,
+        'newtodo' => $new_todo
     ];
+    header('Content-Type: application/json');
+    echo json_encode($response);
 }
 
 
